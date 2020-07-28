@@ -47,6 +47,7 @@ public class Batsmanclient {
 	String ballsbowled=scn.next();
 	
 	 //create BeanFactory IOC COntainer
+		
     factory=new DefaultListableBeanFactory();
     reader=new XmlBeanDefinitionReader(factory);
     reader.loadBeanDefinitions("com/nt/cfgs/applicationContext.xml");
@@ -64,10 +65,11 @@ public class Batsmanclient {
 	     vo.setRuns(runs);
 	     vo.setRunsconceded(runsconceded);
 	     vo.setWicketstaken(wicketstaken);
-	     try {
+	try {     
 	    	 System.out.println();
 	     result=controller.modify(vo);
 	     System.out.println(result);
+		
 	}catch(Exception e) {
 		
 	   System.out.println("INTERNAL_PROBLEM::OOPS");
